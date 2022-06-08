@@ -1,19 +1,11 @@
 import streamlit as st
-
 import numpy as np
 import pandas as pd
 
 st.header("My first Streamlit App")
-st.title("This is a title")
 
-st.write("""
-# This is a first-level heading
-Hello World. This is my first sample project for Streamlit
-## This is a second-level heading
-Hello World. This is my first sample project for Streamlit
-""")
+chart_data = pd.DataFrame(
+     np.random.randn(20, 3),
+     columns=['a', 'b', 'c'])
 
-st.write(pd.DataFrame({
-    'Intplan': ['yes', 'yes', 'yes', 'no'],
-    'Churn Status': [0, 0, 0, 1]
-}))
+st.line_chart(chart_data)
